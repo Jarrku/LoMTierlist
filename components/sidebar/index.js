@@ -14,10 +14,10 @@ const Sidebar = styled.div`
   background-color: ${props => props.theme.sidebar.bg};
 `;
 
-export default () => (
+export default ({ impressionText }) => (
   <Sidebar>
     <Grades />
-    <Impression />
+    <Impression text={impressionText} />
     <Notes />
   </Sidebar>
 );

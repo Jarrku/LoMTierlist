@@ -12,9 +12,9 @@ const P = styled.p`
   line-height: 1.2;
 `;
 
-export default () => (
+export default ({ text }) => (
   <ListItem>
     <Title>Impression</Title>
-    <P>TestData</P>
+    <P>{text}</P>
   </ListItem>
 );

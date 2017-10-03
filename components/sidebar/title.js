@@ -13,7 +13,7 @@ const Title = styled.div`
 
   font-size: 26px;
   font-family: 'GlacialIndifferenceBold';
-  font-weight: normal;
+  font-weight: bold;
   font-style: normal;
   color: rgb(54, 54, 54);
 

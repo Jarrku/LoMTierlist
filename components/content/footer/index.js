@@ -9,8 +9,7 @@ const Footer = styled.div`
   display: flex;
   justify-content: space-between;
 
-  /* Might be: #676799 */
-  background-color: #7c5ba9;
+  background-color: ${props => props.theme.content.footer.background};
 `;
 
 export default () => (

@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const arrowDown = '/static/redArrow.png';
-const arrowUp =
-  'http://www.clker.com/cliparts/e/a/c/a/12065697821256125215pitr_red_arrows_set_5.svg.hi.png';
-const flatLine =
-  'http://www.clker.com/cliparts/e/a/c/a/12065697821256125215pitr_red_arrows_set_5.svg.hi.png';
+const indicators = {
+  buff: '/static/changes/down.png',
+  nerf: '/static/changes/down.png',
+  unchanged: '/static/down.png'
+};
 
 const Container = styled.div`
   display: flex;
@@ -28,9 +28,9 @@ const Arrow = styled.img`
   margin: 20px 0;
 `;
 
-export default ({ championIcon }) => (
+export default ({ name, icon, type }) => (
   <Container>
-    <Icon src={championIcon} />
-    <Arrow src={arrowDown} />
+    <Icon src={icon} alt={name} />
+    <Arrow src={indicators[type]} />
   </Container>
 );

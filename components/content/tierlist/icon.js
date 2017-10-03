@@ -7,6 +7,4 @@ const Icon = styled.img`
   height: 40px;
 `;
 
-export default ({ championIcon }) => (
-  <Icon src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/Annie.png" />
-);
+export default ({ iconUrl, name }) => <Icon src={iconUrl} alt={name} />;
