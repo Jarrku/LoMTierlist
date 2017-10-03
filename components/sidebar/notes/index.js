@@ -2,12 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Title from '../title';
-import Note from './note';
+import ListItem from '../listItem';
 
-const ListItem = styled.div`
-  min-height: 100px;
-  padding: 10px;
-`;
+import Note from './note';
 
 const notes = [
   {

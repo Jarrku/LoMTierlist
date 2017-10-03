@@ -3,18 +3,17 @@ import styled from 'styled-components';
 
 const Grade = styled.li`
   height: 224px;
-  position: relative; /* so that pseudoelements are positioned relatively to their "li"s*/
-  /* use padding-bottom instead of margin-bottom.*/
-  margin-bottom: 0; /* This overrides previously specified margin-bottom */
+
+  position: relative;
   padding-left: 20px;
 
   list-style: none;
 
   &:after {
     /* bullets */
-    content: url('/static/grayDot.png');
+    content: url('/static/greydot.png');
     position: absolute;
-    left: -7px; /*adjust manually*/
+    left: -7px;
     top: 12px;
   }
 
@@ -22,8 +21,8 @@ const Grade = styled.li`
     /* lines */
     content: '';
     position: absolute;
-    left: -1px; /* adjust manually */
-    border-left: 3px solid #959595;
+    left: -1px;
+    border-left: 3px solid ${props => props.theme.sidebar.lineColour};
     height: 100%;
     width: 1px;
   }
@@ -31,7 +30,7 @@ const Grade = styled.li`
   &:first-child:before {
     /* first li's line */
     height: 300%;
-    top: -170px; /* moves the line down so that it disappears under the bullet. Adjust manually */
+    top: -170px;
   }
 
   &:last-child:before {
@@ -44,15 +43,16 @@ const Title = styled.div`
   font-size: 36px;
   font-family: 'Roboto';
   font-weight: 500;
-  color: rgb(189, 186, 186);
+
+  color: ${props => props.theme.sidebar.colour};
 `;
 const Info = styled.p`
+  font-size: 24px;
   font-family: 'Roboto';
   font-weight: 300;
-  font-size: 24px;
   line-height: 1.2;
 
-  color: rgb(151, 147, 147);
+  color: ${props => props.theme.sidebar.gradeInfoColour};
 `;
 
 export default ({ title, text }) => (
