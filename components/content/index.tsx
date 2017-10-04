@@ -19,7 +19,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  background-image: url('/static/background_bad.png');
+  background-image: url('/static/background.png');
   background-size: cover;
   background-repeat: no-repeat;
 `;
@@ -28,13 +28,6 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-const props = {
-  header: {
-    patchNumber: '',
-    role: ''
-  }
-};
 
 interface Props {
   header: IHeader;

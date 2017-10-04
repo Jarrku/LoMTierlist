@@ -16,7 +16,6 @@ const Container = styled.div`
   background-color: ${props => props.theme.bg};
 `;
 
-//const adc = getTheme('adc');
 export default ({ theme, impression, ...contentProps }: Props) => (
   <ThemeProvider theme={getTheme(theme)}>
     <Container>

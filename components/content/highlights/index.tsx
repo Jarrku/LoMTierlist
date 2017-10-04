@@ -28,10 +28,11 @@ const Container = styled.div`
 
 interface ImgProps {
   splashUrl: string;
+  className?: string;
 }
 
 const BaseImgBlock: React.StatelessComponent<ImgProps> = props => (
-  <div>{props.children}</div>
+  <div className={props.className}>{props.children}</div>
 );
 
 const ImgBlock = styled(BaseImgBlock)`
@@ -50,27 +51,9 @@ const ImgBlock = styled(BaseImgBlock)`
   clip-path: polygon(0 0, 84% 0, 100% 100%, 0% 100%);
   box-shadow: ${props => props.theme.content.highlight.image.shadow};
 `;
-/*
-const ImgBlock = styled.div`
-  min-width: 400px;
-  min-height: 280px;
-  margin-right: 20px;
-
-  display: block;
-  float: left;
-
-  background-image: url(${props => props.splashUrl});
-  background-size: cover;
-  width: ${props => props.theme.content.highlight.image.size};
-
-  shape-outside: polygon(0 0, 84% 0, 100% 100%, 0% 100%);
-  clip-path: polygon(0 0, 84% 0, 100% 100%, 0% 100%);
-  box-shadow: ${props => props.theme.content.highlight.image.shadow};
-`;*/
 
 const TextBlock = styled.div`
   margin: 10px;
-  /* Gradient border bottom, turn off on all other sides */
   font-size: 18px;
   font-family: 'Roboto';
   font-weight: 300;

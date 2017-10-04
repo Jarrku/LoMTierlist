@@ -22,30 +22,16 @@ const Icon = styled.img`
   height: 100px;
 `;
 
-/*const Tier = styled.div`
-  min-height: 224px;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: flex-start;
-
-  flex: 1;
-
-  background-color: ${props =>
-    props.theme.content.tierlist.overlays[props.division]};
-  box-shadow: ${props => props.theme.content.tierlist.shadow};
-`;*/
-
 interface TierProps {
   division: string;
+  className?: string;
 }
 
-const Tier: React.StatelessComponent<TierProps> = props => (
-  <div>{props.children}</div>
+const BaseTier: React.StatelessComponent<TierProps> = props => (
+  <div className={props.className}>{props.children}</div>
 );
 
-const StyledTier = styled(Tier)`
+const Tier = styled(BaseTier)`
   min-height: 224px;
 
   display: flex;
