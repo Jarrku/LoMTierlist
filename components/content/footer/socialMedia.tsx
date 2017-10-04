@@ -7,7 +7,7 @@ const SocialMedia = styled.div`
   flex: 1;
 
   font-family: 'Montserrat';
-  color: ${props => props.theme.content.footer.colour};
+  color: ${(props) => props.theme.content.footer.colour};
 `;
 
 const Icon = styled.img`

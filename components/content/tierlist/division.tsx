@@ -2,8 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import {
-  Division as Props,
-  ChampionIcon as IChampionIcon
+  ChampionIcon as IChampionIcon,
+  Division as Props
 } from '../../interfaces';
 
 import ChampionIcon from './icon';
@@ -27,11 +27,11 @@ interface TierProps {
   className?: string;
 }
 
-const BaseTier: React.StatelessComponent<TierProps> = props => (
+const BaseTier: React.StatelessComponent<TierProps> = (props) => (
   <div className={props.className}>{props.children}</div>
 );
 
-const Tier = styled(BaseTier)`
+const Tier = styled(BaseTier) `
   min-height: 224px;
 
   display: flex;
@@ -41,9 +41,9 @@ const Tier = styled(BaseTier)`
 
   flex: 1;
 
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.theme.content.tierlist.overlays[props.division]};
-  box-shadow: ${props => props.theme.content.tierlist.shadow};
+  box-shadow: ${(props) => props.theme.content.tierlist.shadow};
 `;
 
 const divisionIcons = {

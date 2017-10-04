@@ -11,7 +11,7 @@ const Container = styled.div`
   flex: 1;
 
   font-family: 'Montserrat';
-  color: ${props => props.theme.content.footer.colour};
+  color: ${(props) => props.theme.content.footer.colour};
 `;
 
 const TextContainer = styled.div`

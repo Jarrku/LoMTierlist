@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import Title from './title';
 import ListItem from './listItem';
+import Title from './title';
 
 import GradeItem from './gradeItem';
 
@@ -13,7 +13,7 @@ const Intro = styled.div`
 
   font-size: 16px;
   font-family: 'GlacialIndifferenceRegular';
-  color: ${props => props.theme.sidebar.colour};
+  color: ${(props) => props.theme.sidebar.colour};
   text-transform: uppercase;
 
   b {
@@ -32,17 +32,17 @@ const gradeInfo = [
   {
     title: 'S',
     text:
-      'The strongest champions of the patch. Your typical pick/ban champions'
+    'The strongest champions of the patch. Your typical pick/ban champions'
   },
   {
     title: 'A',
     text:
-      'Reliable champions. While strong they are currently outclassed by the top-tier picks'
+    'Reliable champions. While strong they are currently outclassed by the top-tier picks'
   },
   {
     title: 'B',
     text:
-      'Struggle a lot versus meta champions, but still offer some form of value'
+    'Struggle a lot versus meta champions, but still offer some form of value'
   },
   {
     title: 'C',

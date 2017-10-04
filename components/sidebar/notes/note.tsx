@@ -5,7 +5,7 @@ const Container = styled.div`
   display: flex;
 
   font-family: 'Roboto';
-  color: ${props => props.theme.sidebar.colour};
+  color: ${(props) => props.theme.sidebar.colour};
 `;
 
 const Note = styled.div`
@@ -27,6 +27,7 @@ interface Props {
   number: number;
 }
 
+/* tslint:disable:variable-name */
 export default ({ text, number }: Props) => (
   <Container>
     <b>{number}</b>

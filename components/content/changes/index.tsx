@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { Changes as Props, ChampionIcon } from '../../interfaces';
+import { ChampionIcon, Changes as Props } from '../../interfaces';
 
 import Title from '../title';
 import Champion from './champion';
@@ -14,7 +14,7 @@ const Balance = styled.div`
   min-height: 100px;
   align-items: center;
 
-  background-color: ${props => props.theme.content.changes.overlay};
+  background-color: ${(props) => props.theme.content.changes.overlay};
 `;
 
 const BalanceContainer = styled.div`

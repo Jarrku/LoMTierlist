@@ -3,9 +3,9 @@ import styled, { ThemeProvider } from 'styled-components';
 
 import { Props } from './interfaces';
 
-import getTheme from './themes';
-import Sidebar from './sidebar';
 import Content from './content';
+import Sidebar from './sidebar';
+import getTheme from './themes';
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const Container = styled.div`
   max-width: 1500px;
   max-height: 2200px;
   /** Background color to fill up when image ends */
-  background-color: ${props => props.theme.bg};
+  background-color: ${(props) => props.theme.bg};
 `;
 
 export default ({ theme, impression, ...contentProps }: Props) => (

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import Impression from './impression';
 import Grades from './grades';
+import Impression from './impression';
 import Notes from './notes';
 
 const Sidebar = styled.div`
@@ -11,7 +11,7 @@ const Sidebar = styled.div`
 
   flex: 1.2;
 
-  background-color: ${props => props.theme.sidebar.bg};
+  background-color: ${(props) => props.theme.sidebar.bg};
 `;
 
 interface Props {

@@ -2,17 +2,17 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import {
-  Header as IHeader,
-  Division as IDivision,
   Changes as IChanges,
+  Division as IDivision,
+  Header as IHeader,
   Highlights as IHighlights
 } from '../interfaces';
 
-import Header from './header';
-import Tierlist from './tierlist';
 import Changes from './changes';
-import Highlights from './highlights';
 import Footer from './footer';
+import Header from './header';
+import Highlights from './highlights';
+import Tierlist from './tierlist';
 
 const Container = styled.div`
   flex: 5;

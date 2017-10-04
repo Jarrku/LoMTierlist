@@ -22,7 +22,7 @@ const Grade = styled.li`
     content: '';
     position: absolute;
     left: -1px;
-    border-left: 3px solid ${props => props.theme.sidebar.lineColour};
+    border-left: 3px solid ${(props) => props.theme.sidebar.lineColour};
     height: 100%;
     width: 1px;
   }
@@ -44,7 +44,7 @@ const Title = styled.div`
   font-family: 'Roboto';
   font-weight: 500;
 
-  color: ${props => props.theme.sidebar.colour};
+  color: ${(props) => props.theme.sidebar.colour};
 `;
 const Info = styled.p`
   font-size: 24px;
@@ -52,7 +52,7 @@ const Info = styled.p`
   font-weight: 300;
   line-height: 1.2;
 
-  color: ${props => props.theme.sidebar.gradeInfoColour};
+  color: ${(props) => props.theme.sidebar.gradeInfoColour};
 `;
 
 interface Props {

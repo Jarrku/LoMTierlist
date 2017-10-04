@@ -1,5 +1,6 @@
-import {roleName } from "./interfaces";
+import { roleName } from './interfaces';
 
+/* tslint:disable:object-literal-sort-keys */
 interface DefaultOptions {
   sidebar: {
     bg: string;
@@ -50,7 +51,6 @@ interface ThemeOptions {
     };
   };
 }
-
 
 const main: DefaultOptions = {
   sidebar: {
@@ -113,20 +113,23 @@ const adc: ThemeOptions = {
 
 const support = {};
 
-//const themes = { top, jungle, mid, adc, support };
-const themes: {[index:string] : ThemeOptions} = { adc };
+// const themes = { top, jungle, mid, adc, support };
+const themes: { [index: string]: ThemeOptions} = { adc };
 
 const isObject = (item: any) => {
   return item && typeof item === 'object' && !Array.isArray(item);
 };
 
-const mergeDeep = (target:any, source:any) => {
-  let output = Object.assign({}, target);
+const mergeDeep = (target: any, source: any) => {
+  const output = {...target};
   if (isObject(target) && isObject(source)) {
-    Object.keys(source).forEach(key => {
+    Object.keys(source).forEach((key) => {
       if (isObject(source[key])) {
-        if (!(key in target)) Object.assign(output, { [key]: source[key] });
-        else output[key] = mergeDeep(target[key], source[key]);
+        if (!(key in target)) {
+          Object.assign(output, { [key]: source[key] }); 
+        } else {
+          output[key] = mergeDeep(target[key], source[key]);
+        }
       } else {
         Object.assign(output, { [key]: source[key] });
       }
@@ -135,4 +138,4 @@ const mergeDeep = (target:any, source:any) => {
   return output as DefaultOptions & ThemeOptions;
 };
 
-export default (theme: roleName) => mergeDeep(main, themes[theme])
+export default (theme: roleName) => mergeDeep(main, themes[theme]);

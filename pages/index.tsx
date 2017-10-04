@@ -3,6 +3,8 @@ import * as React from 'react';
 import Container from '../components/container';
 import { Props } from '../components/interfaces';
 
+/* tslint:disable */
+
 const src =
   'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/Annie.png';
 const initialProps: Props = {

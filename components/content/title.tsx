@@ -12,11 +12,11 @@ const TitleContainer = styled.div`
   border: 5px solid transparent;
   border-right-width: 0px;
   border-left-width: 0px;
-  border-image: ${props => props.theme.content.title.border};
+  border-image: ${(props) => props.theme.content.title.border};
   border-image-slice: 1;
 
-  background-color: ${props => props.theme.content.title.overlay};
-  box-shadow: ${props => props.theme.content.title.shadow};
+  background-color: ${(props) => props.theme.content.title.overlay};
+  box-shadow: ${(props) => props.theme.content.title.shadow};
 `;
 
 const Arrow = styled.img`padding: 0 10px;`;
