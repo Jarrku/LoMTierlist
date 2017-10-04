@@ -28,9 +28,9 @@ const Arrow = styled.img`
   margin: 20px 0;
 `;
 
-export default ({ name, icon, type }) => (
+export default ({ name, iconUrl, type }) => (
   <Container>
-    <Icon src={icon} alt={name} />
+    <Icon src={iconUrl} alt={name} />
     <Arrow src={indicators[type]} />
   </Container>
 );

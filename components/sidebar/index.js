@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Props } from './interfaces';
 
 import Impression from './impression';
 import Grades from './grades';
@@ -14,10 +15,10 @@ const Sidebar = styled.div`
   background-color: ${props => props.theme.sidebar.bg};
 `;
 
-export default ({ impressionText }) => (
+export default ({ impression }) => (
   <Sidebar>
     <Grades />
-    <Impression text={impressionText} />
+    <Impression text={impression} />
     <Notes />
   </Sidebar>
 );

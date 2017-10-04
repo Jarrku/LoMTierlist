@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Tier from './tier';
+import ChampionIcon from './icon';
 
 const Division = styled.div`
   display: flex;
@@ -17,6 +17,21 @@ const Icon = styled.img`
   height: 100px;
 `;
 
+const Tier = styled.div`
+  min-height: 224px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  flex: 1;
+
+  background-color: ${props =>
+    props.theme.content.tierlist.overlays[props.division]};
+  box-shadow: ${props => props.theme.content.tierlist.shadow};
+`;
+
 const divisionIcons = {
   bronze: '/static/tiers/bronze.png',
   silver: '/static/tiers/silver.png',
@@ -25,6 +40,8 @@ const divisionIcons = {
   diamond: '/static/tiers/diamond.png',
   master: '/static/tiers/master.png'
 };
+
+const renderChampions = (c, i) => <ChampionIcon {...c} key={i} />;
 
 // sort on S ? -> yes for safety
 const props = {
@@ -37,9 +54,12 @@ const props = {
   ]
 };
 
-export default ({ division, tiers }) => (
+export default ({ division, tiers: { s, a, b, c } }) => (
   <Division>
     <Icon src={divisionIcons[division]} />
-    {tiers.map((t, i) => <Tier {...t} division={division} key={i} />)}
+    <Tier division={division}>{s.map(renderChampions)}</Tier>
+    <Tier division={division}>{a.map(renderChampions)}</Tier>
+    <Tier division={division}>{b.map(renderChampions)}</Tier>
+    <Tier division={division}>{c.map(renderChampions)}</Tier>
   </Division>
 );
