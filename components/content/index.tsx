@@ -1,5 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
+
+import {
+  Header as IHeader,
+  Division as IDivision,
+  Changes as IChanges,
+  Highlights as IHighlights
+} from '../interfaces';
 
 import Header from './header';
 import Tierlist from './tierlist';
@@ -29,7 +36,14 @@ const props = {
   }
 };
 
-export default ({ header, tierlist, changes, highlights }) => (
+interface Props {
+  header: IHeader;
+  tierlist: IDivision[];
+  changes: IChanges;
+  highlights: IHighlights;
+}
+
+export default ({ header, tierlist, changes, highlights }: Props) => (
   <Container>
     <Content>
       <Header {...header} />

@@ -1,5 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
+
+import {
+  Division as Props,
+  ChampionIcon as IChampionIcon
+} from '../../interfaces';
 
 import ChampionIcon from './icon';
 
@@ -17,7 +22,30 @@ const Icon = styled.img`
   height: 100px;
 `;
 
-const Tier = styled.div`
+/*const Tier = styled.div`
+  min-height: 224px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  flex: 1;
+
+  background-color: ${props =>
+    props.theme.content.tierlist.overlays[props.division]};
+  box-shadow: ${props => props.theme.content.tierlist.shadow};
+`;*/
+
+interface TierProps {
+  division: string;
+}
+
+const Tier: React.StatelessComponent<TierProps> = props => (
+  <div>{props.children}</div>
+);
+
+const StyledTier = styled(Tier)`
   min-height: 224px;
 
   display: flex;
@@ -41,20 +69,11 @@ const divisionIcons = {
   master: '/static/tiers/master.png'
 };
 
-const renderChampions = (c, i) => <ChampionIcon {...c} key={i} />;
+const renderChampions = (c: IChampionIcon, i: number) => (
+  <ChampionIcon {...c} key={i} />
+);
 
-// sort on S ? -> yes for safety
-const props = {
-  division: 'bronze',
-  tiers: [
-    {
-      name: 's',
-      champions: [{ iconUrl: 'iconUrl', name: 'Name of champion' }]
-    }
-  ]
-};
-
-export default ({ division, tiers: { s, a, b, c } }) => (
+export default ({ division, tiers: { s, a, b, c } }: Props) => (
   <Division>
     <Icon src={divisionIcons[division]} />
     <Tier division={division}>{s.map(renderChampions)}</Tier>

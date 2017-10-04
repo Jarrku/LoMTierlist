@@ -1,5 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
+
+import { Header as Props } from '../interfaces';
 
 const Header = styled.div`
   display: flex;
@@ -41,7 +43,7 @@ const roleImages = {
   support: '/static/roles/support.png'
 };
 
-export default ({ patchNumber, role }) => (
+export default ({ patchNumber, role }: Props) => (
   <Header>
     <HeaderImage src={roleImages[role]} />
     <Intro>League of mentoring presents</Intro>

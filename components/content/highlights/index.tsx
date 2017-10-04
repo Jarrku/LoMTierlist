@@ -1,5 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
+
+import { Highlights as Props } from '../../interfaces';
 
 import Title from '../title';
 
@@ -24,7 +26,15 @@ const Container = styled.div`
   box-shadow: ${props => props.theme.content.highlight.shadow};
 `;
 
-const ImgBlock = styled.div`
+interface ImgProps {
+  splashUrl: string;
+}
+
+const BaseImgBlock: React.StatelessComponent<ImgProps> = props => (
+  <div>{props.children}</div>
+);
+
+const ImgBlock = styled(BaseImgBlock)`
   min-width: 400px;
   min-height: 280px;
   margin-right: 20px;
@@ -40,6 +50,23 @@ const ImgBlock = styled.div`
   clip-path: polygon(0 0, 84% 0, 100% 100%, 0% 100%);
   box-shadow: ${props => props.theme.content.highlight.image.shadow};
 `;
+/*
+const ImgBlock = styled.div`
+  min-width: 400px;
+  min-height: 280px;
+  margin-right: 20px;
+
+  display: block;
+  float: left;
+
+  background-image: url(${props => props.splashUrl});
+  background-size: cover;
+  width: ${props => props.theme.content.highlight.image.size};
+
+  shape-outside: polygon(0 0, 84% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 84% 0, 100% 100%, 0% 100%);
+  box-shadow: ${props => props.theme.content.highlight.image.shadow};
+`;*/
 
 const TextBlock = styled.div`
   margin: 10px;
@@ -52,7 +79,7 @@ const TextBlock = styled.div`
   line-height: 1.6;
 `;
 
-export default ({ splashUrl, text }) => (
+export default ({ splashUrl, text }: Props) => (
   <Highlights>
     <Title title="Patch Highlight" />
     <Container>

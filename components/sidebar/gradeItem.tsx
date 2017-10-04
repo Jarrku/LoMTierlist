@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
 const Grade = styled.li`
@@ -55,7 +55,12 @@ const Info = styled.p`
   color: ${props => props.theme.sidebar.gradeInfoColour};
 `;
 
-export default ({ title, text }) => (
+interface Props {
+  title: string;
+  text: string;
+}
+
+export default ({ title, text }: Props) => (
   <Grade>
     <Title>{title}</Title>
     <Info>{text}</Info>

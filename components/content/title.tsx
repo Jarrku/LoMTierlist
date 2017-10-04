@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
 const TitleContainer = styled.div`
@@ -34,7 +34,11 @@ const Title = styled.div`
   line-height: 1.2;
 `;
 
-export default ({ title }) => (
+interface Props {
+  title: string;
+}
+
+export default ({ title }: Props) => (
   <TitleContainer>
     <Arrow src={arrowImage} />
     <Title>{title}</Title>

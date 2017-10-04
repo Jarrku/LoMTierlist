@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
 const SocialMedia = styled.div`
@@ -29,7 +29,13 @@ const Title = styled.div`
 
 const Link = styled.div`font-weight: 200;`;
 
-export default ({ icon, title, link }) => (
+export interface Props {
+  icon: string;
+  title: string;
+  link: string;
+}
+
+export default ({ icon, title, link }: Props) => (
   <SocialMedia>
     <Icon src={icon} />
     <Title>{title}</Title>

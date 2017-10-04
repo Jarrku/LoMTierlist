@@ -1,6 +1,58 @@
-const purpleBg = '#7c5ba9;';
+import {roleName } from "./interfaces";
 
-const main = {
+interface DefaultOptions {
+  sidebar: {
+    bg: string;
+    colour: string;
+    gradeInfoColour: string;
+    lineColour: string;
+  };
+  content: {
+    tierlist: {
+      overlays: {
+        bronze: string;
+        silver: string;
+        gold: string;
+        platinum: string;
+        diamond: string;
+        master: string;
+      };
+      shadow: string;
+    };
+    highlight: {
+      image: {
+        size: string;
+        shadow: string;
+      };
+    };
+  };
+}
+
+interface ThemeOptions {
+  bg: string;
+  content: {
+    title: {
+      border: string;
+      shadow: string;
+      overlay: string;
+    };
+    changes: {
+      overlay: string;
+    };
+    highlight: {
+      border: string;
+      shadow: string;
+      overlay: string;
+    };
+    footer: {
+      background: string;
+      colour: string;
+    };
+  };
+}
+
+
+const main: DefaultOptions = {
   sidebar: {
     bg: '#363636',
     colour: 'rgb(187, 186, 186)',
@@ -34,7 +86,7 @@ const jungle = {};
 
 const mid = {};
 
-const adc = {
+const adc: ThemeOptions = {
   bg: '#7c5ba9',
   content: {
     title: {
@@ -61,13 +113,14 @@ const adc = {
 
 const support = {};
 
-const themes = { top, jungle, mid, adc, support };
+//const themes = { top, jungle, mid, adc, support };
+const themes: {[index:string] : ThemeOptions} = { adc };
 
-const isObject = item => {
+const isObject = (item: any) => {
   return item && typeof item === 'object' && !Array.isArray(item);
 };
 
-const mergeDeep = (target, source) => {
+const mergeDeep = (target:any, source:any) => {
   let output = Object.assign({}, target);
   if (isObject(target) && isObject(source)) {
     Object.keys(source).forEach(key => {
@@ -79,7 +132,7 @@ const mergeDeep = (target, source) => {
       }
     });
   }
-  return output;
+  return output as DefaultOptions & ThemeOptions;
 };
 
-export default theme => mergeDeep(main, themes[theme]);
+export default (theme: roleName) => mergeDeep(main, themes[theme])

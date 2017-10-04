@@ -1,5 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
+
+import { Changes as Props, ChampionIcon } from '../../interfaces';
 
 import Title from '../title';
 import Champion from './champion';
@@ -21,11 +23,17 @@ const BalanceContainer = styled.div`
   padding-top: 20px;
 `;
 
-const renderBuffs = (b, i) => <Champion {...b} key={i} type="buff" />;
-const renderNerfs = (b, i) => <Champion {...b} key={i} type="nerf" />;
-const renderUnchanged = (b, i) => <Champion {...b} key={i} type="unchanged" />;
+const renderBuffs = (b: ChampionIcon, i: number) => (
+  <Champion {...b} key={i} type="buff" />
+);
+const renderNerfs = (b: ChampionIcon, i: number) => (
+  <Champion {...b} key={i} type="nerf" />
+);
+const renderUnchanged = (b: ChampionIcon, i: number) => (
+  <Champion {...b} key={i} type="unchanged" />
+);
 
-export default ({ buffed = [], nerfed = [], unchanged = [] }) => (
+export default ({ buffed = [], nerfed = [], unchanged = [] }: Props) => (
   <Balance>
     <Title title="Balance Changes" />
     <BalanceContainer>

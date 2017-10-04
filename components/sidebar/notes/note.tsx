@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -22,7 +22,12 @@ const Note = styled.div`
   }
 `;
 
-export default ({ text, number }) => (
+interface Props {
+  text: string;
+  number: number;
+}
+
+export default ({ text, number }: Props) => (
   <Container>
     <b>{number}</b>
     <Note

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
 import Title from './title';
@@ -12,9 +12,13 @@ const P = styled.p`
   line-height: 1.2;
 `;
 
-export default ({ text }) => (
+interface Props {
+  impression: string;
+}
+
+export default ({ impression }: Props) => (
   <ListItem>
     <Title>Impression</Title>
-    <P>{text}</P>
+    <P>{impression}</P>
   </ListItem>
 );

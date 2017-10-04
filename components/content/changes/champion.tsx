@@ -1,7 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
-const indicators = {
+import { ChampionIcon } from '../../interfaces';
+
+const indicators: { [index: string]: string } = {
   buff: '/static/changes/down.png',
   nerf: '/static/changes/down.png',
   unchanged: '/static/down.png'
@@ -28,7 +30,11 @@ const Arrow = styled.img`
   margin: 20px 0;
 `;
 
-export default ({ name, iconUrl, type }) => (
+interface Props extends ChampionIcon {
+  type: string;
+}
+
+export default ({ name, iconUrl, type }: Props) => (
   <Container>
     <Icon src={iconUrl} alt={name} />
     <Arrow src={indicators[type]} />

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
 const bgUrl = '/static/titleBanner.png';
@@ -20,4 +20,8 @@ const Title = styled.div`
   text-transform: uppercase;
 `;
 
-export default ({ children }) => <Title>{children}</Title>;
+interface Props {
+  children: string;
+}
+
+export default ({ children }: Props) => <Title>{children}</Title>;

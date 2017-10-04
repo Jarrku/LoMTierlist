@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
-import SocialMedia from './socialMedia';
+import SocialMedia, { Props as Link } from './socialMedia';
 
-const tempLinks = [
+const links: Link[] = [
   {
     icon: '/static/links/discord.png',
     title: 'Join us',
@@ -30,8 +30,6 @@ const Container = styled.div`
   flex: 1;
 `;
 
-export default ({ links }) => (
-  <Container>
-    {tempLinks.map((l, i) => <SocialMedia {...l} key={i} />)}
-  </Container>
+export default () => (
+  <Container>{links.map((l, i) => <SocialMedia {...l} key={i} />)}</Container>
 );
