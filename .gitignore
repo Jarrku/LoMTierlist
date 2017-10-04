@@ -1,2 +1,7 @@
 node_modules
 .next
+components/**/*.js
+pages/**/*.js
+
+# Except _Document
+!pages/_document.js
