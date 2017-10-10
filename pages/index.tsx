@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import Container from '../components/container';
-import { Props } from '../components/interfaces';
+import Container from '../components/resultPage/container';
+import { Props } from '../components/resultPage/interfaces';
 
 /* tslint:disable */
 
@@ -268,14 +268,14 @@ const initialProps: Props = {
       {
         name: 'annie',
         iconUrl:
-          'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/Annie.png'
+        'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/Annie.png'
       }
     ],
     unchanged: []
   },
   highlights: {
     splashUrl:
-      'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Annie_0.jpg',
+    'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Annie_0.jpg',
     text: `
   Lorem ipsum dolor sit amet. Vestibulum commodo volutpat a, convallis ac,
   laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis.
